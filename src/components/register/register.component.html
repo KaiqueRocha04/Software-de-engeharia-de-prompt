@@ -1,0 +1,84 @@
+
+<div class="container mx-auto px-4 py-12">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold tracking-tight text-white text-center">Crie sua Conta</h2>
+    <p class="mt-2 text-center text-sm text-gray-400">
+      Junte-se à nossa rede de profissionais e empresas de elite.
+    </p>
+
+    <div class="mt-8">
+      <div class="border-b border-gray-700">
+        <nav class="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
+          <button (click)="setUserType('military')" 
+                  [class]="userType() === 'military' ? 'border-yellow-400 text-yellow-400' : 'border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-500'"
+                  class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors">
+            Sou Ex-Militar
+          </button>
+          <button (click)="setUserType('company')" 
+                  [class]="userType() === 'company' ? 'border-yellow-400 text-yellow-400' : 'border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-500'"
+                  class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors">
+            Sou Empresa
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-gray-800 p-8 rounded-lg shadow-lg">
+      @if (userType() === 'military') {
+        <form class="space-y-6">
+          <h3 class="text-xl font-semibold text-white">Perfil do Profissional</h3>
+          <div>
+            <label class="block text-sm font-medium text-gray-300">Nome completo</label>
+            <input type="text" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300">Ramo Militar</label>
+            <select class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+              <option>Exército</option>
+              <option>Marinha</option>
+              <option>Aeronáutica</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300">Tempo de serviço</label>
+            <input type="text" placeholder="Ex: 8 anos" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300">Principais Experiências e Aprendizados</label>
+            <textarea rows="4" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"></textarea>
+          </div>
+           <div>
+            <label class="block text-sm font-medium text-gray-300">Habilidades (separadas por vírgula)</label>
+            <input type="text" placeholder="Liderança, Gestão de Crises, Logística..." class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+          </div>
+          <div>
+            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-gray-900 bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-yellow-500">
+              Criar Perfil
+            </button>
+          </div>
+        </form>
+      } @else {
+        <form class="space-y-6">
+          <h3 class="text-xl font-semibold text-white">Perfil da Empresa</h3>
+          <div>
+            <label class="block text-sm font-medium text-gray-300">Nome da Empresa</label>
+            <input type="text" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+          </div>
+           <div>
+            <label class="block text-sm font-medium text-gray-300">Área de Atuação</label>
+            <input type="text" placeholder="Segurança Patrimonial, Cibersegurança..." class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300">Descrição da Vaga/Proposta</label>
+            <textarea rows="4" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-gray-900 bg-yellow-500 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-yellow-500">
+              Criar Perfil
+            </button>
+          </div>
+        </form>
+      }
+    </div>
+  </div>
+</div>

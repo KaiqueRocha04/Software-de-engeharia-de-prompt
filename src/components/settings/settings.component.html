@@ -1,0 +1,66 @@
+
+<div class="container mx-auto px-4 py-12">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold text-white mb-8">Configurações</h1>
+
+    @if (currentUser(); as user) {
+      <!-- Personal/Company Data -->
+      <div class="bg-gray-800 rounded-lg shadow p-6 mb-8">
+        <h2 class="text-xl font-semibold text-yellow-400 mb-4">Dados Cadastrais</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-300">Nome</label>
+            <input type="text" [value]="user.nome" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300">E-mail</label>
+            <input type="email" [value]="user.contatos.email" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+          </div>
+           <div>
+            <label class="block text-sm font-medium text-gray-300">Telefone</label>
+            <input type="tel" [value]="user.contatos.telefone" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm">
+          </div>
+          <div class="pt-4">
+             <button type="submit" class="rounded-md bg-yellow-500 px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500">
+              Salvar Alterações
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Notifications -->
+      <div class="bg-gray-800 rounded-lg shadow p-6 mb-8">
+        <h2 class="text-xl font-semibold text-yellow-400 mb-4">Notificações</h2>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="flex-grow flex flex-col">
+              <span class="text-sm font-medium text-gray-200">Novas mensagens</span>
+              <span class="text-sm text-gray-400">Receber notificações por e-mail quando receber uma nova mensagem.</span>
+            </span>
+            <button type="button" class="bg-gray-600 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-800" role="switch" aria-checked="false">
+              <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-0"></span>
+            </button>
+          </div>
+           <div class="flex items-center justify-between">
+            <span class="flex-grow flex flex-col">
+              <span class="text-sm font-medium text-gray-200">Interesse no perfil</span>
+              <span class="text-sm text-gray-400">Receber notificações quando uma empresa demonstrar interesse.</span>
+            </span>
+            <button type="button" class="bg-yellow-500 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-800" role="switch" aria-checked="true">
+              <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out translate-x-5"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account Deletion -->
+      <div class="bg-red-900/30 border border-red-500/50 rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold text-red-400 mb-2">Excluir Conta</h2>
+        <p class="text-red-300/80 mb-4">Esta ação é irreversível. Todos os seus dados, incluindo perfil e mensagens, serão permanentemente removidos.</p>
+        <button class="bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-700 transition-colors">
+          Excluir minha conta
+        </button>
+      </div>
+    }
+  </div>
+</div>
